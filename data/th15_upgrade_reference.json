@@ -1,0 +1,23 @@
+{
+  "townHall": 15,
+  "maxHeroLevels": {
+    "barbarianKing": 90,
+    "archerQueen": 90,
+    "grandWarden": 65,
+    "royalChampion": 40
+  },
+  "priorityUpgrades": [
+    "Town Hall",
+    "Laboratory",
+    "Pet House",
+    "Clan Castle",
+    "Barbarian King",
+    "Archer Queen",
+    "Grand Warden",
+    "Royal Champion",
+    "Eagle Artillery",
+    "Scattershot",
+    "Monolith",
+    "Spell Tower"
+  ]
+}
