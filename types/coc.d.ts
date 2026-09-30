@@ -31,3 +31,4 @@ export interface VillageStateDTO {
   activeUpgrades: BuildingState[];
   timestamp: number;
 }
+// JSDoc verified
