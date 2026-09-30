@@ -1,0 +1,94 @@
+{
+  "tag": "#2Y89VPG2P",
+  "name": "Chief GOAT",
+  "townHallLevel": 15,
+  "builderCount": 6,
+  "goldPassBoost": 15,
+  "activeBuilders": 4,
+  "freeBuilders": 2,
+  "resources": {
+    "gold": 12500000,
+    "elixir": 9800000,
+    "darkElixir": 240000,
+    "builderGold": 4000000,
+    "builderElixir": 3500000
+  },
+  "buildings": [
+    {
+      "id": "th_15",
+      "name": "Town Hall",
+      "level": 15,
+      "maxLevel": 16,
+      "isUpgrading": false,
+      "upgradeCost": 20000000,
+      "resourceType": "gold",
+      "upgradeTimeSeconds": 1209600
+    },
+    {
+      "id": "hero_bk",
+      "name": "Barbarian King",
+      "level": 82,
+      "maxLevel": 90,
+      "isUpgrading": true,
+      "upgradeCost": 280000,
+      "resourceType": "darkElixir",
+      "upgradeTimeSeconds": 432000,
+      "remainingTimeSeconds": 142000
+    },
+    {
+      "id": "hero_aq",
+      "name": "Archer Queen",
+      "level": 85,
+      "maxLevel": 90,
+      "isUpgrading": true,
+      "upgradeCost": 290000,
+      "resourceType": "darkElixir",
+      "upgradeTimeSeconds": 432000,
+      "remainingTimeSeconds": 210000
+    },
+    {
+      "id": "def_eagle",
+      "name": "Eagle Artillery",
+      "level": 5,
+      "maxLevel": 6,
+      "isUpgrading": true,
+      "upgradeCost": 18000000,
+      "resourceType": "gold",
+      "upgradeTimeSeconds": 1036800,
+      "remainingTimeSeconds": 350000
+    },
+    {
+      "id": "def_scatter_1",
+      "name": "Scattershot",
+      "level": 3,
+      "maxLevel": 4,
+      "isUpgrading": true,
+      "upgradeCost": 17000000,
+      "resourceType": "gold",
+      "upgradeTimeSeconds": 950400,
+      "remainingTimeSeconds": 520000
+    },
+    {
+      "id": "storage_gold_1",
+      "name": "Gold Storage",
+      "level": 15,
+      "maxLevel": 16,
+      "isUpgrading": false,
+      "upgradeCost": 4500000,
+      "resourceType": "elixir",
+      "upgradeTimeSeconds": 604800
+    }
+  ],
+  "laboratory": {
+    "isUpgrading": true,
+    "unitName": "Electro Dragon",
+    "targetLevel": 6,
+    "remainingTimeSeconds": 180000
+  },
+  "builderBase": {
+    "builderHallLevel": 9,
+    "ottoUnlocked": true,
+    "clockTowerBoostActive": false,
+    "clockTowerCooldownSeconds": 4200
+  }
+}
