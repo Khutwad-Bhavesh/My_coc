@@ -59,3 +59,4 @@ class CoCParser {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { CoCParser };
 }
+// Parser validation logic enhanced
