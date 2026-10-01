@@ -16,3 +16,4 @@ try {
   console.error('❌ CoCParser Test Failed:', err);
   process.exit(1);
 }
+// Edge cases tested
