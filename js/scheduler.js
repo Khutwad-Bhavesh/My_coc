@@ -60,3 +60,4 @@ class BuilderScheduler {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { BuilderScheduler };
 }
+// Scheduler TH priority guide ready
