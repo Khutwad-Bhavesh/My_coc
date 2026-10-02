@@ -16,3 +16,4 @@ try {
   console.error('❌ BuilderScheduler Test Failed:', err);
   process.exit(1);
 }
+// Duration math optimized
