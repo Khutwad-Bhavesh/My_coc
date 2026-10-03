@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🛡️ Clash of Clans Builder Scheduler & Upgrade Timer</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>🛡️ CoC Builder Scheduler & Guide</h1>
+        <p style="color: #94a3b8; font-size: 0.9rem;">Parse official Village JSON Export metadata and optimize builder stagger queues</p>
+      </div>
+      <div class="goat-badge">CR7 GOAT MINDSET 🐐</div>
+    </header>
+
+    <div class="builder-status-bar">
+      <div class="stat-box">
+        <div style="color: #94a3b8; font-size: 0.85rem;">FREE BUILDERS</div>
+        <div class="stat-val" id="statFreeBuilders">0 / 6</div>
+      </div>
+      <div class="stat-box">
+        <div style="color: #94a3b8; font-size: 0.85rem;">ACTIVE UPGRADES</div>
+        <div class="stat-val" id="statActiveUpgrades" style="color: #38bdf8;">0</div>
+      </div>
+      <div class="stat-box">
+        <div style="color: #94a3b8; font-size: 0.85rem;">GOLD PASS BOOST</div>
+        <div class="stat-val" id="statGoldPass" style="color: #ec4899;">0%</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>📋 Village JSON Import</h3>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin: 0.5rem 0 1rem 0;">
+          Paste your Clash of Clans exported JSON metadata below (Settings &rarr; More Settings &rarr; Export Data):
+        </p>
+        <textarea id="jsonInput" placeholder="Paste JSON metadata here..."></textarea>
+        <div style="display:flex; gap: 0.5rem;">
+          <button id="btnParse">Parse & Schedule</button>
+          <button id="btnLoadSample" style="background: rgba(255,255,255,0.1);">Load Sample</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>⏳ Active Builder Countdown Timers</h3>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1rem;">Live countdown ticking with Web Audio alarm alerts on completion</p>
+        <div class="timer-list" id="timerContainer">
+          <p style="color:#94a3b8;">Click "Load Sample" or paste your JSON to initialize active timers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/parser.js"></script>
+  <script src="./js/scheduler.js"></script>
+  <script src="./js/timer.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
