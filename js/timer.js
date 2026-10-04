@@ -1,5 +1,5 @@
 /**
- * Real-Time Timer & Alarm Engine
+ * Real-Time Timer & Alarm Engine (V2 Hardened)
  * Handles monotonic ticking, Web Audio synthesize chime, and LocalStorage state persistence
  */
 
@@ -9,6 +9,7 @@ class UpgradeTimerEngine {
     this.intervalId = null;
     this.onTick = onTickCallback;
     this.audioCtx = null;
+    this.initVisibilityListener();
   }
 
   initAudio() {
@@ -17,6 +18,19 @@ class UpgradeTimerEngine {
       if (AudioContext) {
         this.audioCtx = new AudioContext();
       }
+    }
+    if (this.audioCtx && this.audioCtx.state === 'suspended') {
+      this.audioCtx.resume();
+    }
+  }
+
+  initVisibilityListener() {
+    if (typeof document !== 'undefined' && document.addEventListener) {
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          this.tick();
+        }
+      });
     }
   }
 
@@ -46,14 +60,15 @@ class UpgradeTimerEngine {
   }
 
   start(upgrades) {
-    this.stop();
+    this.stop(); // Stop any running interval to prevent memory leak
     const now = Date.now();
-    this.timers = upgrades.map(u => ({
+    this.timers = (upgrades || []).map(u => ({
       ...u,
-      targetTime: now + (u.remainingTimeSeconds * 1000),
+      targetTime: now + ((u.remainingTimeSeconds || 0) * 1000),
       notified: false
     }));
 
+    this.saveState();
     this.intervalId = setInterval(() => this.tick(), 1000);
     this.tick();
   }
@@ -62,6 +77,16 @@ class UpgradeTimerEngine {
     if (this.intervalId) {
       clearInterval(this.intervalId);
       this.intervalId = null;
+    }
+  }
+
+  saveState() {
+    try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('coc_active_timers', JSON.stringify(this.timers));
+      }
+    } catch (e) {
+      console.warn('LocalStorage save failed:', e);
     }
   }
 
@@ -88,4 +113,4 @@ class UpgradeTimerEngine {
     }
   }
 }
-// LocalStorage backup active
+// Oct 4 Audit V15
