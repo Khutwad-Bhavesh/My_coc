@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🛡️ Clash of Clans Builder Scheduler & Upgrade Timer</title>
+  <title>🛡️ Clash of Clans Builder Scheduler & Meta Advisor</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
   <div class="container">
     <header>
       <div>
-        <h1>🛡️ CoC Builder Scheduler & Guide</h1>
-        <p style="color: #94a3b8; font-size: 0.9rem;">Parse official Village JSON Export metadata and optimize builder stagger queues</p>
+        <h1>🛡️ CoC Builder Scheduler & Meta Advisor</h1>
+        <p style="color: #94a3b8; font-size: 0.9rem;">Parse official Village JSON Export metadata, optimize builder stagger queues & discover meta armies</p>
       </div>
       <div class="goat-badge">CR7 GOAT MINDSET 🐐</div>
     </header>
@@ -42,6 +42,11 @@
           <button id="btnParse">Parse & Schedule</button>
           <button id="btnLoadSample" style="background: rgba(255,255,255,0.1);">Load Sample</button>
         </div>
+
+        <h3 style="margin-top: 1.5rem; color: #8b5cf6;">🏰 Defense Layout Priorities</h3>
+        <div id="layoutPriorityContainer" style="margin-top: 0.8rem;">
+          <p style="color:#94a3b8; font-size:0.85rem;">Load JSON to inspect defense layout priority recommendations.</p>
+        </div>
       </div>
 
       <div class="card">
@@ -49,6 +54,11 @@
         <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1rem;">Live countdown ticking with Web Audio alarm alerts on completion</p>
         <div class="timer-list" id="timerContainer">
           <p style="color:#94a3b8;">Click "Load Sample" or paste your JSON to initialize active timers.</p>
+        </div>
+
+        <h3 style="margin-top: 1.5rem; color: #ec4899;">⚔️ Meta Army Composition Readiness</h3>
+        <div id="metaArmyContainer" style="margin-top: 0.8rem;">
+          <p style="color:#94a3b8; font-size:0.85rem;">Load JSON to calculate army composition readiness percentages.</p>
         </div>
       </div>
     </div>
@@ -60,4 +70,3 @@
   <script src="./js/app.js"></script>
 </body>
 </html>
-<!-- GOAT mindset verified -->

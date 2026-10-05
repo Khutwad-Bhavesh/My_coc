@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" font-family="Inter, sans-serif">
+  <rect width="960" height="540" fill="#090D16"/>
+  <defs>
+    <marker id="arrow-default" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#555555"/>
+    </marker>
+    <marker id="arrow-c0" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#1E293B"/>
+    </marker>
+    <marker id="arrow-c1" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#38BDF8"/>
+    </marker>
+    <marker id="arrow-c2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#F59E0B"/>
+    </marker>
+    <marker id="arrow-c3" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-c4" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#EC4899"/>
+    </marker>
+    <marker id="arrow-c5" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#8B5CF6"/>
+    </marker>
+  </defs>
+  <rect x="55.0" y="45.0" width="855.0" height="90.0" fill="#0F172A" stroke="#334155" stroke-width="1" rx="8"/>
+  <text x="63.0" y="61.0" font-size="11" fill="#999999" font-weight="bold">Layer 1: Metadata Ingestion &amp; Scrapers</text>
+  <rect x="55.0" y="212.5" width="855.0" height="95.0" fill="#1E293B" stroke="#475569" stroke-width="1" rx="8"/>
+  <text x="63.0" y="228.5" font-size="11" fill="#999999" font-weight="bold">Layer 2: Meta Synergy &amp; DTO Evaluation Core</text>
+  <rect x="120.0" y="392.5" width="800.0" height="95.0" fill="#0F172A" stroke="#F59E0B" stroke-width="1" rx="8"/>
+  <text x="128.0" y="408.5" font-size="11" fill="#999999" font-weight="bold">Layer 3: Staggered Scheduling &amp; Real-Time Timers</text>
+  <path d="M 160.0,115.0 L 160.0,232.5" stroke="#38BDF8" stroke-width="2" fill="none" marker-end="url(#arrow-c1)"/>
+  <rect x="126.0" y="155.8" width="68.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="160.0" y="167.8" font-size="10" fill="#777777" text-anchor="middle">parse JSON</text>
+  <path d="M 480.0,115.0 L 480.0,232.5" stroke="#EC4899" stroke-width="2" fill="none" marker-end="url(#arrow-c4)"/>
+  <rect x="440.0" y="155.8" width="80.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="480.0" y="167.8" font-size="10" fill="#777777" text-anchor="middle">compositions</text>
+  <path d="M 800.0,115.0 L 800.0,232.5" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#arrow-c5)"/>
+  <rect x="766.0" y="155.8" width="68.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="800.0" y="167.8" font-size="10" fill="#777777" text-anchor="middle">topologies</text>
+  <path d="M 173.8,287.5 L 236.2,412.5" stroke="#38BDF8" stroke-width="2" fill="none" marker-end="url(#arrow-c1)"/>
+  <rect x="162.0" y="332.0" width="86.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="205.0" y="344.0" font-size="10" fill="#777777" text-anchor="middle">buildings DTO</text>
+  <path d="M 444.9,287.5 L 285.1,412.5" stroke="#EC4899" stroke-width="2" fill="none" marker-end="url(#arrow-c4)"/>
+  <rect x="313.0" y="332.0" width="104.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="365.0" y="344.0" font-size="10" fill="#777777" text-anchor="middle">offense priority</text>
+  <path d="M 716.0,287.5 L 334.0,412.5" stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#arrow-c5)"/>
+  <rect x="473.0" y="332.0" width="104.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="525.0" y="344.0" font-size="10" fill="#777777" text-anchor="middle">defense priority</text>
+  <path d="M 360.0,440.0 L 445.0,440.0" stroke="#F59E0B" stroke-width="2" fill="none" marker-end="url(#arrow-c2)"/>
+  <rect x="359.5" y="422.0" width="86.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="402.5" y="434.0" font-size="10" fill="#777777" text-anchor="middle">timeline gaps</text>
+  <path d="M 655.0,440.0 L 740.0,440.0" stroke="#10B981" stroke-width="2" fill="none" marker-end="url(#arrow-c3)"/>
+  <rect x="654.5" y="422.0" width="86.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="697.5" y="434.0" font-size="10" fill="#777777" text-anchor="middle">trigger chime</text>
+  <rect x="75.0" y="65.0" width="170.0" height="50.0" fill="#1E293B" stroke="#38BDF8" stroke-width="2" rx="8"/>
+  <text x="160.0" y="87.0" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Village JSON Export</text>
+  <text x="160.0" y="102.0" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(Settings Metadata)</text>
+  <rect x="390.0" y="65.0" width="180.0" height="50.0" fill="#1E293B" stroke="#EC4899" stroke-width="2" rx="8"/>
+  <text x="480.0" y="87.0" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Meta Army Scraper</text>
+  <text x="480.0" y="102.0" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(Root Rider / QC Lalo)</text>
+  <rect x="710.0" y="65.0" width="180.0" height="50.0" fill="#1E293B" stroke="#8B5CF6" stroke-width="2" rx="8"/>
+  <text x="800.0" y="87.0" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Base Layout Analyzer</text>
+  <text x="800.0" y="102.0" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(Anti-3-Star Topology)</text>
+  <rect x="75.0" y="232.5" width="170.0" height="55.0" fill="#0F172A" stroke="#38BDF8" stroke-width="2" rx="8"/>
+  <text x="160.0" y="257.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Village DTO Parser</text>
+  <text x="160.0" y="272.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(Gold Pass &amp; Boosts)</text>
+  <rect x="390.0" y="232.5" width="180.0" height="55.0" fill="#0F172A" stroke="#EC4899" stroke-width="2" rx="8"/>
+  <text x="480.0" y="257.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Army Synergy Matcher</text>
+  <text x="480.0" y="272.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(Troop/Hero Levels)</text>
+  <rect x="710.0" y="232.5" width="180.0" height="55.0" fill="#0F172A" stroke="#8B5CF6" stroke-width="2" rx="8"/>
+  <text x="800.0" y="257.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Defensive Priority Matrix</text>
+  <text x="800.0" y="272.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(TH Upgrade Meta)</text>
+  <rect x="140.0" y="412.5" width="220.0" height="55.0" fill="#1E293B" stroke="#F59E0B" stroke-width="2" rx="8"/>
+  <text x="250.0" y="437.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Tomasulo Builder Scheduler</text>
+  <text x="250.0" y="452.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(Stagger &amp; Resource Hazards)</text>
+  <rect x="445.0" y="412.5" width="210.0" height="55.0" fill="#1E293B" stroke="#10B981" stroke-width="2" rx="8"/>
+  <text x="550.0" y="437.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Dynamic Timer Engine</text>
+  <text x="550.0" y="452.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(Tickless Monotonic Loop)</text>
+  <rect x="740.0" y="412.5" width="160.0" height="55.0" fill="#1E293B" stroke="#38BDF8" stroke-width="2" rx="8"/>
+  <text x="820.0" y="437.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">Web Audio / Alerts</text>
+  <text x="820.0" y="452.1" font-size="13" fill="#F8FAFC" text-anchor="middle" font-weight="bold">(Dual-Tone Synthesizer)</text>
+</svg>

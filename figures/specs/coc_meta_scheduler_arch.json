@@ -1,0 +1,196 @@
+{
+  "title": "Clash of Clans Meta Discovery & Dynamic Builder Scheduler Architecture",
+  "canvas": {
+    "width": 960,
+    "height": 540
+  },
+  "style": {
+    "font_family": "Inter, sans-serif",
+    "font_size": 13,
+    "bg_color": "#090D16",
+    "palette": ["#1E293B", "#38BDF8", "#F59E0B", "#10B981", "#EC4899", "#8B5CF6"]
+  },
+  "nodes": [
+    {
+      "id": "node_village_export",
+      "label": "Village JSON Export\n(Settings Metadata)",
+      "x": 160,
+      "y": 90,
+      "width": 170,
+      "height": 50,
+      "shape": "rounded",
+      "fill": "#1E293B",
+      "stroke": "#38BDF8",
+      "text_color": "#F8FAFC"
+    },
+    {
+      "id": "node_army_meta",
+      "label": "Meta Army Scraper\n(Root Rider / QC Lalo)",
+      "x": 480,
+      "y": 90,
+      "width": 180,
+      "height": 50,
+      "shape": "rounded",
+      "fill": "#1E293B",
+      "stroke": "#EC4899",
+      "text_color": "#F8FAFC"
+    },
+    {
+      "id": "node_layout_meta",
+      "label": "Base Layout Analyzer\n(Anti-3-Star Topology)",
+      "x": 800,
+      "y": 90,
+      "width": 180,
+      "height": 50,
+      "shape": "rounded",
+      "fill": "#1E293B",
+      "stroke": "#8B5CF6",
+      "text_color": "#F8FAFC"
+    },
+    {
+      "id": "node_dto_parser",
+      "label": "Village DTO Parser\n(Gold Pass & Boosts)",
+      "x": 160,
+      "y": 260,
+      "width": 170,
+      "height": 55,
+      "shape": "rounded",
+      "fill": "#0F172A",
+      "stroke": "#38BDF8",
+      "text_color": "#F8FAFC"
+    },
+    {
+      "id": "node_army_engine",
+      "label": "Army Synergy Matcher\n(Troop/Hero Levels)",
+      "x": 480,
+      "y": 260,
+      "width": 180,
+      "height": 55,
+      "shape": "rounded",
+      "fill": "#0F172A",
+      "stroke": "#EC4899",
+      "text_color": "#F8FAFC"
+    },
+    {
+      "id": "node_base_engine",
+      "label": "Defensive Priority Matrix\n(TH Upgrade Meta)",
+      "x": 800,
+      "y": 260,
+      "width": 180,
+      "height": 55,
+      "shape": "rounded",
+      "fill": "#0F172A",
+      "stroke": "#8B5CF6",
+      "text_color": "#F8FAFC"
+    },
+    {
+      "id": "node_tomasulo_sched",
+      "label": "Tomasulo Builder Scheduler\n(Stagger & Resource Hazards)",
+      "x": 250,
+      "y": 440,
+      "width": 220,
+      "height": 55,
+      "shape": "rounded",
+      "fill": "#1E293B",
+      "stroke": "#F59E0B",
+      "text_color": "#F8FAFC"
+    },
+    {
+      "id": "node_dynamic_timer",
+      "label": "Dynamic Timer Engine\n(Tickless Monotonic Loop)",
+      "x": 550,
+      "y": 440,
+      "width": 210,
+      "height": 55,
+      "shape": "rounded",
+      "fill": "#1E293B",
+      "stroke": "#10B981",
+      "text_color": "#F8FAFC"
+    },
+    {
+      "id": "node_audio_chime",
+      "label": "Web Audio / Alerts\n(Dual-Tone Synthesizer)",
+      "x": 820,
+      "y": 440,
+      "width": 160,
+      "height": 55,
+      "shape": "rounded",
+      "fill": "#1E293B",
+      "stroke": "#38BDF8",
+      "text_color": "#F8FAFC"
+    }
+  ],
+  "edges": [
+    {
+      "from": "node_village_export",
+      "to": "node_dto_parser",
+      "label": "parse JSON",
+      "color": "#38BDF8"
+    },
+    {
+      "from": "node_army_meta",
+      "to": "node_army_engine",
+      "label": "compositions",
+      "color": "#EC4899"
+    },
+    {
+      "from": "node_layout_meta",
+      "to": "node_base_engine",
+      "label": "topologies",
+      "color": "#8B5CF6"
+    },
+    {
+      "from": "node_dto_parser",
+      "to": "node_tomasulo_sched",
+      "label": "buildings DTO",
+      "color": "#38BDF8"
+    },
+    {
+      "from": "node_army_engine",
+      "to": "node_tomasulo_sched",
+      "label": "offense priority",
+      "color": "#EC4899"
+    },
+    {
+      "from": "node_base_engine",
+      "to": "node_tomasulo_sched",
+      "label": "defense priority",
+      "color": "#8B5CF6"
+    },
+    {
+      "from": "node_tomasulo_sched",
+      "to": "node_dynamic_timer",
+      "label": "timeline gaps",
+      "color": "#F59E0B"
+    },
+    {
+      "from": "node_dynamic_timer",
+      "to": "node_audio_chime",
+      "label": "trigger chime",
+      "color": "#10B981"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g1",
+      "label": "Layer 1: Metadata Ingestion & Scrapers",
+      "node_ids": ["node_village_export", "node_army_meta", "node_layout_meta"],
+      "fill": "#0F172A",
+      "stroke": "#334155"
+    },
+    {
+      "id": "g2",
+      "label": "Layer 2: Meta Synergy & DTO Evaluation Core",
+      "node_ids": ["node_dto_parser", "node_army_engine", "node_base_engine"],
+      "fill": "#1E293B",
+      "stroke": "#475569"
+    },
+    {
+      "id": "g3",
+      "label": "Layer 3: Staggered Scheduling & Real-Time Timers",
+      "node_ids": ["node_tomasulo_sched", "node_dynamic_timer", "node_audio_chime"],
+      "fill": "#0F172A",
+      "stroke": "#F59E0B"
+    }
+  ]
+}
