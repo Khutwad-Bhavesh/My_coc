@@ -1,0 +1,3 @@
+# Ignore personal village export JSON files
+data/user_export.json
+*.private.json

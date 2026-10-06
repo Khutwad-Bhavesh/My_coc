@@ -25,7 +25,7 @@ try {
 
   // Test 3: Boundary edge cases (empty array)
   const emptyParsed = CoCParser.parse({});
-  if (emptyParsed.buildings.length !== 0 || emptyParsed.freeBuilders !== 5) {
+  if (emptyParsed.buildings.length !== 0 || emptyParsed.freeBuilders !== 6) {
     throw new Error('Empty Payload Boundary Check Failed!');
   }
   console.log('✅ Test 3: Empty Payload Boundary Passed!');

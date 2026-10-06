@@ -1,0 +1,13 @@
+{
+  "tag": "#MOCK12345",
+  "timestamp": 1791302094,
+  "buildings": [
+    { "data": 1000001, "lvl": 15, "weapon": 1 },
+    { "data": 1000005, "lvl": 15, "timer": 72826 },
+    { "data": 1000005, "lvl": 15, "timer": 72839 },
+    { "data": 1000072, "lvl": 0, "timer": 95679 }
+  ],
+  "heroes": [
+    { "data": 28000006, "lvl": 50, "timer": 159220 }
+  ]
+}
