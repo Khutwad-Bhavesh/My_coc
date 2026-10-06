@@ -37,14 +37,7 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.goat-badge {
-  background: linear-gradient(135deg, var(--accent-gold), #b45309);
-  color: #000;
-  font-weight: 800;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
+
 
 .grid {
   display: grid;
