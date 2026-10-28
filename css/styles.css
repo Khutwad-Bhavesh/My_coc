@@ -134,5 +134,41 @@ button:hover {
   font-weight: 700;
   color: #38bdf8;
 }
+
+.hidden {
+  display: none !important;
+}
+
+.drop-zone {
+  background: rgba(15, 23, 42, 0.4);
+  border: 2px dashed rgba(148, 163, 184, 0.4);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+}
+
+.drop-zone.drag-over {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  transform: scale(1.02);
+}
+
+.timer-item[draggable="true"] {
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.timer-item[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.timer-item.dragging {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
 /* Oct 5 Responsive V1 */
 /* Oct 5 Glassmorphism V2 */
