@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const timerContainer = document.getElementById('timerContainer');
   const metaArmyContainer = document.getElementById('metaArmyContainer');
   const layoutPriorityContainer = document.getElementById('layoutPriorityContainer');
+  const completedZone = document.getElementById('completedZone');
 
   const statFreeBuilders = document.getElementById('statFreeBuilders');
   const statActiveUpgrades = document.getElementById('statActiveUpgrades');
@@ -72,6 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMetaArmies(schedule.armyAnalysis);
     renderLayoutPriorities(schedule.layoutPriorities);
     timerEngine.start(schedule.activeTimeline);
+
+    if (completedZone) {
+      if (schedule.activeTimeline.length > 0) {
+        completedZone.classList.remove('hidden');
+      } else {
+        completedZone.classList.add('hidden');
+      }
+    }
   }
 
   function renderMetaArmies(armies) {
@@ -111,10 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    timerContainer.innerHTML = timers.map(t => {
+    timerContainer.innerHTML = timers.map((t, index) => {
       const resClass = t.resourceType === 'darkElixir' ? 'dark-elixir' : t.resourceType === 'elixir' ? 'elixir' : '';
       return `
-        <div class="timer-item ${resClass}">
+        <div class="timer-item ${resClass}" draggable="true" data-index="${index}">
           <div>
             <strong>${CoCParser.escapeHTML(t.name)}</strong>
             <div style="font-size:0.85rem; color:#94a3b8;">Level ${t.level} &bull; ${CoCParser.escapeHTML(t.resourceType)}</div>
@@ -123,6 +132,80 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
     }).join('');
+  }
+
+  // Drag and Drop Logic
+  if (timerContainer) {
+    timerContainer.addEventListener('dragstart', (e) => {
+      const timerItem = e.target.closest('.timer-item');
+      if (timerItem) {
+        timerItem.classList.add('dragging');
+        e.dataTransfer.setData('text/plain', timerItem.dataset.index);
+        e.dataTransfer.effectAllowed = 'move';
+      }
+    });
+
+    timerContainer.addEventListener('dragend', (e) => {
+      const timerItem = e.target.closest('.timer-item');
+      if (timerItem) {
+        timerItem.classList.remove('dragging');
+      }
+    });
+  }
+
+  if (completedZone) {
+    completedZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      completedZone.classList.add('drag-over');
+    });
+
+    completedZone.addEventListener('dragenter', (e) => {
+      e.preventDefault();
+      completedZone.classList.add('drag-over');
+    });
+
+    completedZone.addEventListener('dragleave', (e) => {
+      completedZone.classList.remove('drag-over');
+    });
+
+    completedZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      completedZone.classList.remove('drag-over');
+      
+      const timerIndexStr = e.dataTransfer.getData('text/plain');
+      if (timerIndexStr !== '' && currentVillageState) {
+        const idx = parseInt(timerIndexStr, 10);
+        if (!isNaN(idx) && timerEngine.timers[idx]) {
+          const droppedTimer = timerEngine.timers[idx];
+          // Find the original item in currentVillageState.activeUpgrades
+          const originalIndex = currentVillageState.activeUpgrades.findIndex(
+            (u) => u.name === droppedTimer.name && u.level === droppedTimer.level && u.remainingTimeSeconds === droppedTimer.remainingTimeSeconds
+          );
+          
+          if (originalIndex !== -1) {
+            // Remove it from activeUpgrades
+            const completedUpgrade = currentVillageState.activeUpgrades.splice(originalIndex, 1)[0];
+            
+            // Increment free builders
+            currentVillageState.freeBuilders = Math.min(
+              currentVillageState.totalBuilders,
+              currentVillageState.freeBuilders + 1
+            );
+            
+            // Mark the building as not upgrading in buildings array
+            const buildingIndex = currentVillageState.buildings.findIndex(
+              (b) => b.name === completedUpgrade.name && b.level === completedUpgrade.level && b.isUpgrading
+            );
+            if (buildingIndex !== -1) {
+              currentVillageState.buildings[buildingIndex].isUpgrading = false;
+              currentVillageState.buildings[buildingIndex].level += 1; // It leveled up!
+            }
+
+            processJSON(currentVillageState);
+          }
+        }
+      }
+    });
   }
 });
 // Oct 5 Audit V1
