@@ -102,3 +102,6 @@ Log entry: 2026-10-10T14:45:00
 
 ## 2026-10-30T10:30:00 - test(scheduler): verify dragover and drop boundary events for active timers
 - Verified component integrity and schedule consistency.
+
+## 2026-10-31T10:30:00 - fix(ui): ensure drop zone dynamically shows/hides based on active upgrades
+- Verified component integrity and schedule consistency.
