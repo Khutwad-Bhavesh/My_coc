@@ -105,3 +105,6 @@ Log entry: 2026-10-10T14:45:00
 
 ## 2026-10-31T10:30:00 - fix(ui): ensure drop zone dynamically shows/hides based on active upgrades
 - Verified component integrity and schedule consistency.
+
+## 2026-11-01T10:30:00 - perf(scheduler): optimize stagger queue recalculation on instant upgrade drop
+- Verified component integrity and schedule consistency.
